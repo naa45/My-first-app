@@ -1,0 +1,33 @@
+<label for="">Server Name</label>
+
+<!-- $event is to capture the data. -->
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
+
+<!--two-way binding  -->
+<input type="text" class="form-control" [(ngModel)] ="serverName">
+
+<!-- <p>{{ serverName}}</p> -->
+
+
+<!--button to enable users add new servers and also button is disabled . also
+ making the disabled functionality dynamic, its bind by enclosing it in a sqaure bracket  -->
+
+<button class="btn btn-primary"
+[disabled] ="!allowNewServer"
+(click) ="onCreateServer()">Add Server</button>
+
+<!-- string interpolation -->
+<!-- <p>{{ allowNewServer  }}</p> -->
+
+<!-- property binding -->
+<!-- <p [innerText]=" allowNewServer"  ></p> -->
+
+<!-- <p>{{ serverCreationStatus }}</p> -->
+
+<!-- changing the DOM, showws server status on btn click -->
+<p *ngIf="serverCreated">server was created, server name is {{ serverName }}</p>
+
+<app-server *ngFor="let server of servers"></app-server>
+
+
+
