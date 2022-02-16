@@ -8,5 +8,19 @@ import { Component } from '@angular/core';
 
 })
 export class AppComponent {
-  username = '';
+  showText= false;
+  log = [] as any;
+
+  OnToggleDetails() {
+    // toggle dispaly
+    this.showText = !this.showText;
+    // to increase number of clicks when button is clicked
+    // this.log.push(this.log.length +1);
+
+    // using timestamp
+    this.log.push(new Date())
+  }
+
+
+
 }

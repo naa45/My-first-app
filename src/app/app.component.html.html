@@ -45,7 +45,35 @@
     <!-- <button class="btn btn-primary" [disabled]="username === ''" (click)="username = ''">Rest button</button> -->
 
     <!-- <app-servers></app-servers> -->
-    
+
+
+
+    <ol>
+      <li>Add a button which says 'Display Details</li>
+      <li>Add a paragraph wir=th content of your  choice (eg. 'Secret Password = turn'</li>
+      <li>Toggle the fisplaying of that paragraph with the button created in the first step</li>
+      <li>Log all buutton clicks in an array and output that array below the secret paragraph (mAYBE LOG A TIMESTAMP OR SIMPLY AN INCREMENTING NUMBER</li>
+      <li>Startint at the 5th log Item, give all future log items a blue background (via ngStyle ) and  WHITE color (ngClass</li>
+    </ol>
+    <hr>
+
+
+    <!-- toggle the display of the paragraph -->
+    <!-- <button  class = "btn btn-primary" (click)="showText = !showText">Display Details</button>
+    <p *ngIf="showText">Secret Password = tuna</p> -->
+
+
+
+    <!-- another way to toggle the dispaly of the paragraph -->
+
+    <button  class = "btn btn-primary" (click) = "OnToggleDetails()">Display Details</button>
+    <p *ngIf="showText">Secret Password = tuna</p>
+    <div
+
+    *ngFor="let logItem of log; let i = index"
+    [ngStyle] ="{backgroundColor: i>=5 ? 'blue' : 'transparent'}"
+    [ngClass]="{'white-text': i >= 5}">{{logItem}}</div>
+
 
 
     </div>
